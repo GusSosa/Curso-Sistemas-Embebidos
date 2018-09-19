@@ -1,0 +1,54 @@
+@startuml
+participant "TASK(Enviar)" as tarea
+participant "EnviarTexto()" as enviar
+participant "EnviarCaracter()" as caracter
+participant "ISR(EventoSerial)" as servicio
+participant "UART" as uart
+
+[-> tarea: ActivateTask(Enviar)
+activate tarea
+tarea -> enviar: 'Hola'
+activate enviar
+enviar --> uart: 'H'
+activate uart
+enviar --> tarea: TRUE
+deactivate enviar
+activate tarea
+uart -> servicio: TxEmpty
+deactivate uart
+activate servicio
+servicio -> caracter
+activate caracter
+caracter --> uart: 'o'
+activate uart
+caracter --> servicio: FALSE
+deactivate caracter
+deactivate servicio
+
+uart -> servicio: TxEmpty
+deactivate uart
+activate servicio
+servicio -> caracter
+activate caracter
+caracter --> uart: 'l'
+activate uart
+caracter --> servicio: FALSE
+deactivate caracter
+deactivate servicio
+
+uart -> servicio: TxEmpty
+deactivate uart
+activate servicio
+servicio -> caracter
+activate caracter
+caracter --> uart: 'a'
+activate uart
+caracter --> servicio: TRUE
+deactivate caracter
+servicio -> tarea: SetEvent(Completo)
+deactivate servicio
+deactivate uart
+deactivate tarea
+[<- tarea: TerminateTask()
+deactivate tarea
+@enduml
