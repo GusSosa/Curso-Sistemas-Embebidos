@@ -1,1 +1,15 @@
-Proyecto final de muestra para Curso Sistemas Embebidos
+# Serial communcation with OSEK RTOS
+
+_Este es el proyecto final para el curso de Sistemas Operativos en Tiempo Real (RTOS)
+de la Escuela de Enseñanza de Sistemas Embebidos (EESE 2018)_
+
+## Construido con 🛠️
+
+* [Proyecto CIAA](http://www.proyecto-ciaa.com.ar/) - Hardware Edu-CIAA
+* [Sublime](https://www.sublimetext.com/) - Procesador de texto
+* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
+
+
+## Licencia 📄
+
+Este proyecto está bajo la Licencia FreeBSD - mira el archivo [LICENSE.md](LICENSE.md) para detalles
